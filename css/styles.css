@@ -184,7 +184,7 @@ input {
 .status {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
 
     .bar-container {
@@ -199,6 +199,20 @@ input {
             &.filled {
                 background-color: #d13a3a;
             }
+        }
+    }
+
+    #openHowToBtn {
+        background-color: transparent;
+        border: none;
+
+        .icon-question {
+            width: 35px;
+            height: 35px;
+        }
+
+        &:hover img{
+            filter: brightness(0) saturate(100%) invert(31%) sepia(70%) saturate(337%) hue-rotate(181deg) brightness(95%) contrast(99%);
         }
     }
 }
@@ -552,12 +566,79 @@ dialog {
 
 }
 
+/* Notepad */
+.notepad-dialog {
+    border: none;
+    padding: 0;
+    background: transparent;
+
+    & .notepad-wrapper {
+        background: #fff8dc;
+        width: 300px;
+        max-width: 90vw;
+        padding: 20px;
+        border: 2px dashed #a67c52;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+        position: relative;
+        line-height: 1.5;
+        text-align: left;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            bottom: 0;
+            background: repeating-linear-gradient(to bottom,
+                    transparent,
+                    transparent 24px,
+                    #e0d2b0 25px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        & h2 {
+            margin-top: 0;
+            font-size: 20px;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        & ul {
+            padding-left: 20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        & button {
+            display: block;
+            margin: 15px auto 0;
+            padding: 6px 12px;
+            background: #ffeb99;
+            border: 1px solid #b08b4f;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background: #ffe066;
+            }
+        }
+    }
+}
+
 @container (max-width: 480px) {
     .welcome-screen {
         width: 100%;
         height: 100vh;
     }
 }
+
+
 
 
 /* retro dialog */
@@ -609,3 +690,4 @@ dialog {
     user-select: none;
     opacity: 0.5;
 }
+

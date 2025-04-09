@@ -64,6 +64,7 @@
                     <div id="hunger-bar" class="bar-container"></div>
                     <p>Hunger</p>
                 </div>
+                <button id="openHowToBtn"><img src="images/icon-question.svg"  alt="" class="icon-question"></button>
                 <div>
                     <div id="happiness-bar" class="bar-container"></div>
                     <p>Happiness</p>
@@ -139,8 +140,21 @@
                 <button id="cancel-dialog">Cancel</button>
             </div>
         </div>
-        
-        
+    </dialog>
+
+    <dialog id="howToDialog" class="notepad-dialog">
+        <div class="notepad-wrapper">
+            <h2>How to Take Care of Your Pet</h2>
+            <ul>
+                <li>🕹️ Check in regularly — your pet gets <strong>hungry every 48 minutes</strong>.</li>
+                <li>🎈 Your pet gets <strong>bored every 24 minutes</strong>. Click <em>Play</em> to cheer them up!</li>
+                <li>🍖 Feed and play to keep your pet happy and healthy.</li>
+                <li>📌 Your game saves automatically using cookies, but we also provide a backup save code — copy it before you leave so
+                    you don't lose progress!</li>
+
+            </ul>
+            <button id="closeHowToBtn">Got it!</button>
+        </div>
     </dialog>
 
     <script src="scripts/script.js"></script>

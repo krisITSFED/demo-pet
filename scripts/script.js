@@ -331,4 +331,14 @@ $(document).ready(function () {
         });
     }
 
+    // NotePad 
+    $("#openHowToBtn").on("click", () => {
+        $("#howToDialog")[0].showModal();
+    });
+
+    $("#closeHowToBtn").on("click", () => {
+        $("#howToDialog")[0].close();
+    });
+
+
 });
