@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITS Pets</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Check if browser is old -->
+    <dialog id="updateBrowserDialog" class="retro-dialog">
+        <div class="retro-header">
+            <span>⚠ Browser Compatibility</span>
+        </div>
+        <div class="retro-body">
+            <p>This game uses the latest CSS magic ✨ — like nested rules!<br>
+                Your browser doesn't support them yet.<br><br>
+                Please update your browser to continue playing.</p>
+        </div>
+        <div class="retro-footer">
+            <button id="closeUpdateDialog" class="retro-btn">Okay</button>
+        </div>
+    </dialog>
+
+    <!-- main game -->
+    <div class="welcome-screen">
+        <div class="versionNum">
+            <div class="ribbon"><span>Ver 1.0</span></div>
+        </div>
+
+        <h2>Welcome! Choose Your Pet</h2>
+    
+        <div class="pet-selection">
+            <button class="pet-btn" data-type="dog">🐶 Dog</button>
+            <button class="pet-btn" data-type="cat">🐱 Cat</button>
+        </div>
+        <input type="text" id="pet-name-input" placeholder="Enter Pet Name">
+
+        <div class="btn">
+            <button class="start-btn"><span>Start</span></button>
+        </div>
+        
+        <p>------ or ------</p>
+
+        <!-- Load Save Code -->
+        <input type="text" id="load-save-code" placeholder="Enter Save Code">
+        <div class="btn">
+            <button id="load-save-code-btn">Load Game</button>
+        </div>
+        
+    </div>
+
+
+    <div class="gamewrapper">
+        <div class="layout">
+            <div class="container-title">
+                <h1 class="flicker-in-1">ITS Pets</h1>
+            </div>
+            
+            <div class="status">
+                <div>
+                    <div id="hunger-bar" class="bar-container"></div>
+                    <p>Hunger</p>
+                </div>
+                <div>
+                    <div id="happiness-bar" class="bar-container"></div>
+                    <p>Happiness</p>
+                </div>
+            </div>
+
+            <!-- TODO: DOG image is not transparent -->
+
+            <div class="pet-container">
+                <div class="background-overlay"></div>
+                <div id="pet" class=""></div>
+            </div>
+
+            <div class="petname-container">
+                <div class="petname">
+                    <span id="petName"></span>
+                </div>
+                <button class="edit-icon" id="edit-button" popover-target="tooltip">
+                    <img src="images/icon-edit.svg" alt="Edit" >
+                    <div id="tooltip" popover class="tooltip">Edit name</div>
+                </button>
+                
+            </div>
+            
+            
+            <div class="btn-ctrls">
+                <div class="btn">
+                    <button id="feed"><span>Feed</span></button>
+                </div>
+                <div class="btn">
+                    <button id="play"><span>Play</span></button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <dialog id="edit-modal">
+        <div class="edit-content">
+            <label>New Pet Name:</label>
+            <input type="text" id="new-pet-name" placeholder="Enter New Pet Name">
+            <button id="save-name-btn">Change Name</button>
+            
+            <button id="reset-btn">Reset Game</button>
+
+            <div id="save-code-display"></div>
+            <button id="show-save-code" popover-target="edit-save-code">
+                Copy Save Code
+                <div id="edit-save-code" popover class="popNotification">Copied!</div>
+            </button>
+
+            <button id="close-modal">Close</button>
+        </div>
+    </dialog>
+    
+    <dialog id="saveDialog">
+        <h2>Before You Go...</h2>
+        <p>🕹️ “Here's your save code — don't lose it!”</p>
+        
+        <pre id="saveCodeOutput"></pre>
+
+        <div class="btn-container">
+            <div class="btn">
+                <button id="copySaveCodeBtn" popover-target="tooltip-save-code">
+                    Copy Code
+                    <div popover id="tooltip-save-code" class="popNotification">Copied!</div>
+                </button>
+            </div>
+            <div class="btn">
+                <button id="close-browser">Save & Close</button>
+            </div>
+            <div class="btn">
+                <button id="cancel-dialog">Cancel</button>
+            </div>
+        </div>
+        
+        
+    </dialog>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
