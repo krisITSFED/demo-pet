@@ -207,7 +207,7 @@ input {
     grid-area: pet;
     box-sizing: border-box;
     position: relative;
-    background-image: url(images/livingRoom.png);
+    background-image: url("../images/livingRoom.png");
     background-size: cover;
     display: flex;
     align-items: center;
