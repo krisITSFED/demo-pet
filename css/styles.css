@@ -170,6 +170,16 @@ input {
         font-size: 1.2em;
     }
 
+    .welcome-title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .welcome-title-sub {
+        font-size: 1.2em;
+        color: var(--blue2);
+    }
+
 }
 
 .hidden {
