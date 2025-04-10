@@ -264,6 +264,15 @@ $(document).ready(function () {
         }
     });
 
+    $("#openHowToBtn").on("click", () => {
+        $("#howToDialog")[0].showModal();
+    });
+
+    $("#closeHowToBtn").on("click", () => {
+        $("#howToDialog")[0].close();
+    });
+
+
     // ⏱ Start timer logic
     startStaticTimer();
 });
