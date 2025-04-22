@@ -265,6 +265,7 @@ input {
     background-position: 0 var(--position-top);
     background-size: auto 200%;
     animation: idle .8s steps(3) infinite;
+    -webkit-animation: idle .8s steps(3) infinite;
     z-index: 3;
 
     &.eating {}
